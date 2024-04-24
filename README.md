@@ -1,3 +1,42 @@
+
+
+
+Failed to discover available identity versions when contacting http://10.107.147.31:35357/v3. Attempting to parse version from URL.
+Traceback (most recent call last):
+  File "ser.py", line 18, in <module>
+    nova = conn.compute
+  File "C:\evacuation\eva\lib\site-packages\openstack\service_description.py", line 89, in __get__
+    proxy = self._make_proxy(instance)
+  File "C:\evacuation\eva\lib\site-packages\openstack\service_description.py", line 289, in _make_proxy        
+    found_version = temp_adapter.get_api_major_version()
+  File "C:\evacuation\eva\lib\site-packages\keystoneauth1\adapter.py", line 352, in get_api_major_version      
+    return self.session.get_api_major_version(auth or self.auth, **kwargs)
+  File "C:\evacuation\eva\lib\site-packages\keystoneauth1\session.py", line 1289, in get_api_major_version     
+    return auth.get_api_major_version(self, **kwargs)
+  File "C:\evacuation\eva\lib\site-packages\keystoneauth1\identity\base.py", line 497, in get_api_major_version
+    data = get_endpoint_data(discover_versions=discover_versions)
+  File "C:\evacuation\eva\lib\site-packages\keystoneauth1\identity\base.py", line 268, in get_endpoint_data    
+    service_catalog = self.get_access(session).service_catalog
+  File "C:\evacuation\eva\lib\site-packages\keystoneauth1\identity\base.py", line 131, in get_access
+    self.auth_ref = self.get_auth_ref(session)
+  File "C:\evacuation\eva\lib\site-packages\keystoneauth1\identity\generic\base.py", line 205, in get_auth_ref
+    return self._plugin.get_auth_ref(session, **kwargs)
+  File "C:\evacuation\eva\lib\site-packages\keystoneauth1\identity\v3\base.py", line 185, in get_auth_ref
+    resp = session.post(token_url, json=body, headers=headers,
+  File "C:\evacuation\eva\lib\site-packages\keystoneauth1\session.py", line 1162, in post
+    return self.request(url, 'POST', **kwargs)
+  File "C:\evacuation\eva\lib\site-packages\keystoneauth1\session.py", line 985, in request
+    raise exceptions.from_response(resp, method, url)
+keystoneauth1.exceptions.http.ServiceUnavailable: Service Unavailable (HTTP 503)
+
+
+
+
+
+
+
+
+
 # openstackapitest
 
 # import csv
